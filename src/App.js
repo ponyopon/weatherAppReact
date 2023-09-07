@@ -21,10 +21,10 @@ function App() {
     setLoading(true);
     axios
       .get(
-        `http://api.weatherapi.com/v1/current.json?key=f8bf441f8da64bb88c715012230509&q=${city}&aqi=no`
+        `https://api.weatherapi.com/v1/current.json?key=f8bf441f8da64bb88c715012230509&q=${city}&aqi=no`
       )
       .then((res) => {
-        setResults({
+        setResults( {
           country: res.data.location.country,
           cityName: res.data.location.name,
           temperature: res.data.current.temp_c,
@@ -36,7 +36,7 @@ function App() {
       })
       .catch((err) =>
         alert(
-          "エラーが発生しました。ページをリロードして、もう一度トライしてください。"
+          "error"
         )
       );
   };
